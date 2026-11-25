@@ -18,23 +18,16 @@
             "problemMatcher": [
                 "$gcc"
             ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
+            "group": "build",
             "detail": "Задача создана отладчиком."
         },
         {
-            "type": "cppbuild",
-            "label": "C/C++: clang++ сборка активного файла",
-            "command": "/usr/bin/clang++",
+            "label": "Сборка лабораторной (C++17)",
+            "type": "process",
+            "command": "/bin/sh",
             "args": [
-                "-fcolor-diagnostics",
-                "-fansi-escape-codes",
-                "-g",
-                "${file}",
-                "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "-c",
+                "exec /usr/bin/clang++ -std=c++17 -g ./*.cpp -o .lab-run"
             ],
             "options": {
                 "cwd": "${fileDirname}"
@@ -42,8 +35,10 @@
             "problemMatcher": [
                 "$gcc"
             ],
-            "group": "build",
-            "detail": "Задача создана отладчиком."
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ],
     "version": "2.0.0"
